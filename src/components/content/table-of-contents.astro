@@ -1,0 +1,38 @@
+---
+import type { TableOfContents as Toc } from "@acdh-oeaw/mdx-lib";
+
+import TableOfContentsLevel from "@/components/content/table-of-contents-level.astro";
+import { getTranslations } from "@/lib/i18n/get-translations";
+import { generateUniqueId } from "@/lib/utils/generate-unique-id";
+
+interface Props {
+	tableOfContents: Toc;
+	title?: string;
+}
+
+const { locale } = Astro.locals;
+
+const { tableOfContents, title } = Astro.props;
+
+const t = await getTranslations(locale, "mdx");
+
+const id = generateUniqueId();
+---
+
+{
+	Array.isArray(tableOfContents) && tableOfContents.length > 0 ? (
+		<nav
+			aria-label={title != null ? undefined : t("tableOfContents")}
+			aria-labelledby={title != null ? id : undefined}
+		>
+			{title != null ? (
+				<h2 class="font-semibold" id={id}>
+					{title}
+				</h2>
+			) : null}
+			<div class="not-richtext mb-12">
+				<TableOfContentsLevel headings={tableOfContents} />
+			</div>
+		</nav>
+	) : null
+}

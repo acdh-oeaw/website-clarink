@@ -1,0 +1,50 @@
+{
+  "links": [
+    {
+      "discriminant": "link",
+      "value": {
+        "label": "Über das Projekt",
+        "link": {
+          "discriminant": "pages",
+          "value": {
+            "id": "about-the-project"
+          }
+        }
+      }
+    },
+    {
+      "discriminant": "separator"
+    },
+    {
+      "discriminant": "menu",
+      "value": {
+        "label": "Info",
+        "items": [
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "Impressum",
+              "link": {
+                "discriminant": "external",
+                "value": "/imprint"
+              }
+            }
+          },
+          {
+            "discriminant": "separator"
+          },
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "Kontakt",
+              "link": {
+                "discriminant": "external",
+                "value": "/contact"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

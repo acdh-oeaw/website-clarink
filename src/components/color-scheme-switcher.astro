@@ -1,0 +1,44 @@
+---
+import { Icon } from "astro-icon/components";
+
+import ColorSchemeRadioGroup from "@/components/color-scheme-radio-group.svelte";
+import { getTranslations } from "@/lib/i18n/get-translations";
+
+const { locale } = Astro.locals;
+
+const t = await getTranslations(locale, "ColorSchemeSwitcher");
+
+const colorSchemes = {
+	system: t("color-schemes.system"),
+	light: t("color-schemes.light"),
+	dark: t("color-schemes.dark"),
+};
+
+const label = t("change");
+---
+
+<ColorSchemeRadioGroup client:only="svelte" {colorSchemes} {label}>
+	<Fragment slot="system">
+		<Icon
+			aria-hidden={true}
+			class="size-5 shrink-0 rounded-full text-icon-neutral transition group-data-checked:text-text-strong hover:text-text-strong"
+			name="lucide:laptop"
+		/>
+	</Fragment>
+
+	<Fragment slot="dark">
+		<Icon
+			aria-hidden={true}
+			class="size-5 shrink-0 rounded-full text-icon-neutral transition group-data-checked:text-text-strong hover:text-text-strong"
+			name="lucide:moon"
+		/>
+	</Fragment>
+
+	<Fragment slot="light">
+		<Icon
+			aria-hidden={true}
+			class="size-5 shrink-0 rounded-full text-icon-neutral transition group-data-checked:text-text-strong hover:text-text-strong"
+			name="lucide:sun"
+		/>
+	</Fragment>
+</ColorSchemeRadioGroup>

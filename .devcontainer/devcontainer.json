@@ -1,0 +1,23 @@
+{
+	"name": "Astro",
+	"image": "ghcr.io/acdh-oeaw/devcontainer-frontend:24",
+	"runArgs": ["--add-host=host.docker.internal:host-gateway"],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"astro-build.astro-vscode",
+				"bradlc.vscode-tailwindcss",
+				"dbaeumer.vscode-eslint",
+				"editorconfig.editorconfig",
+				"github.vscode-github-actions",
+				"lokalise.i18n-ally",
+				"mikestead.dotenv",
+				"ms-playwright.playwright",
+				"prettier.prettier-vscode",
+				"stylelint.vscode-stylelint",
+				"svelte.svelte-vscode",
+				"unifiedjs.vscode-mdx"
+			]
+		}
+	}
+}

@@ -1,0 +1,34 @@
+---
+import type { TableOfContents as Toc } from "@acdh-oeaw/mdx-lib";
+
+interface Props {
+	headings: Toc;
+	depth?: number;
+}
+
+const { depth = 0, headings } = Astro.props;
+---
+
+<ol class="flex flex-col gap-y-1.5 text-text-weak" style={{ marginLeft: `${String(depth * 8)}px` }}>
+	{
+		headings.map((heading) => {
+			return (
+				<li class="flex flex-col gap-y-0.5">
+					{heading.id != null ? (
+						<a
+							class="-mx-1 inline-flex rounded-xs px-1 underline decoration-dotted focus-outline transition hover:text-text-strong hover:decoration-solid focus-visible:text-text-strong"
+							href={`#${heading.id}`}
+						>
+							{heading.value}
+						</a>
+					) : (
+						<span>{heading.value}</span>
+					)}
+					{Array.isArray(heading.children) && heading.children.length > 0 ? (
+						<Astro.self depth={depth + 1} headings={heading.children} />
+					) : null}
+				</li>
+			);
+		})
+	}
+</ol>

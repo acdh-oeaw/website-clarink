@@ -1,0 +1,50 @@
+---
+import { addTrailingSlash, removeTrailingSlash } from "@acdh-oeaw/lib";
+import type { HTMLAttributes } from "astro/types";
+
+import type { IntlLocale } from "@/lib/i18n/locales";
+import { localeToPrefix } from "@/lib/i18n/routing";
+import { withBasePath } from "@/lib/navigation/with-base-path";
+
+interface Props extends HTMLAttributes<"a"> {
+	locale?: IntlLocale;
+	reload?: boolean;
+}
+
+const { locale: currentLocale } = Astro.locals;
+
+const { download, href, locale = currentLocale, reload, ...rest } = Astro.props;
+
+function getPrefixedHref(href: string) {
+	const prefix = `/${localeToPrefix[locale]}`;
+
+	if (href.split("/").at(-1)?.includes(".")) {
+		return withBasePath(prefix + href);
+	}
+
+	return withBasePath(addTrailingSlash(prefix + href));
+}
+
+const prefixedHref =
+	download != null
+		? href
+		: typeof href === "string" && href.startsWith("/")
+			? getPrefixedHref(href)
+			: href;
+
+const prefixedUrl = new URL(prefixedHref ?? "", Astro.url.origin);
+
+const isCurrent =
+	prefixedUrl.origin === Astro.url.origin &&
+	removeTrailingSlash(prefixedUrl.pathname) === removeTrailingSlash(Astro.url.pathname);
+---
+
+<a
+	aria-current={isCurrent ? "page" : undefined}
+	{...rest}
+	data-astro-reload={reload}
+	download={download}
+	href={prefixedHref}
+>
+	<slot />
+</a>

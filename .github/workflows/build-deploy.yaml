@@ -77,7 +77,7 @@ jobs:
         run: mkdir -p node_modules/.astro
 
       - name: Cache astro build artefacts
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: node_modules/.astro/
           key: ${{ runner.os }}-astro-24.x-${{ github.run_id }}
@@ -112,16 +112,16 @@ jobs:
           build-args: |
             "PUBLIC_APP_BASE_PATH=${{ vars.PUBLIC_APP_BASE_PATH }}"
             "PUBLIC_APP_BASE_URL=${{ needs.vars.outputs.public_url }}"
-            "PUBLIC_BOTS=${{ vars.PUBLIC_BOTS }}"
-            "PUBLIC_GOOGLE_SITE_VERIFICATION=${{ vars.PUBLIC_GOOGLE_SITE_VERIFICATION }}"
-            "PUBLIC_IMPRINT_SERVICE_BASE_URL=${{ vars.PUBLIC_IMPRINT_SERVICE_BASE_URL }}"
+            "PUBLIC_APP_BOTS=${{ vars.PUBLIC_APP_BOTS }}"
+            "PUBLIC_APP_GOOGLE_SITE_VERIFICATION=${{ vars.PUBLIC_APP_GOOGLE_SITE_VERIFICATION }}"
+            "PUBLIC_APP_IMPRINT_SERVICE_BASE_URL=${{ vars.PUBLIC_APP_IMPRINT_SERVICE_BASE_URL }}"
+            "PUBLIC_APP_MATOMO_BASE_URL=${{ vars.PUBLIC_APP_MATOMO_BASE_URL }}"
+            "PUBLIC_APP_MATOMO_ID=${{ vars.PUBLIC_APP_MATOMO_ID }}"
+            "PUBLIC_APP_SERVICE_ID=${{ vars.SERVICE_ID }}"
             "PUBLIC_KEYSTATIC_GITHUB_APP_SLUG=${{ vars.PUBLIC_KEYSTATIC_GITHUB_APP_SLUG }}"
             "PUBLIC_KEYSTATIC_GITHUB_REPO_NAME=${{ vars.PUBLIC_KEYSTATIC_GITHUB_REPO_NAME }}"
             "PUBLIC_KEYSTATIC_GITHUB_REPO_OWNER=${{ vars.PUBLIC_KEYSTATIC_GITHUB_REPO_OWNER }}"
             "PUBLIC_KEYSTATIC_MODE=${{ vars.PUBLIC_KEYSTATIC_MODE }}"
-            "PUBLIC_MATOMO_BASE_URL=${{ vars.PUBLIC_MATOMO_BASE_URL }}"
-            "PUBLIC_MATOMO_ID=${{ vars.PUBLIC_MATOMO_ID }}"
-            "PUBLIC_REDMINE_ID=${{ vars.SERVICE_ID }}"
           secrets: |
             "KEYSTATIC_GITHUB_CLIENT_ID=${{ secrets.K8S_SECRET_KEYSTATIC_GITHUB_CLIENT_ID }}"
             "KEYSTATIC_GITHUB_CLIENT_SECRET=${{ secrets.K8S_SECRET_KEYSTATIC_GITHUB_CLIENT_SECRET }}"

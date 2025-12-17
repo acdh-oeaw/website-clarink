@@ -14,3 +14,12 @@ to the local filesystem).
 ## development
 
 see [docs/contributing.md](./docs/contributing.md).
+
+## template variants
+
+- [variant/static](https://github.com/acdh-oeaw/template-website-astro/tree/variant/static) branch:
+  removes keystatic cms, contact form, and email service, serves site with caddy
+- [variant/without-rss](https://github.com/acdh-oeaw/template-website-astro/tree/variant/without-rss)
+  branch: removes rss feed.
+- [variant/without-site-search](https://github.com/acdh-oeaw/template-website-astro/tree/variant/without-site-search)
+  branch: removes site search with `pagefind`.

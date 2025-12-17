@@ -7,11 +7,11 @@ import { expect, test } from "~/e2e/lib/test";
 test.describe("analytics service", () => {
 	// eslint-disable-next-line playwright/no-skipped-test
 	test.skip(() => {
-		return env.PUBLIC_MATOMO_BASE_URL == null || env.PUBLIC_MATOMO_ID == null;
+		return env.PUBLIC_APP_MATOMO_BASE_URL == null || env.PUBLIC_APP_MATOMO_ID == null;
 	}, "Analytics service disabled.");
 
 	const baseUrl = String(
-		createUrl({ baseUrl: env.PUBLIC_MATOMO_BASE_URL!, pathname: "/matomo.php?**" }),
+		createUrl({ baseUrl: env.PUBLIC_APP_MATOMO_BASE_URL!, pathname: "/matomo.php?**" }),
 	);
 
 	test("should track page views", async ({ createIndexPage }) => {

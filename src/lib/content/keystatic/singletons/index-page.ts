@@ -32,7 +32,7 @@ export const createIndexPage = createSingleton("/index-page/", (paths, locale) =
 			}),
 			image: fields.image({
 				label: "Image",
-				validation: { isRequired: true },
+				validation: { isRequired: false },
 				...createAssetOptions(paths.assetPath),
 			}),
 			lead: fields.text({

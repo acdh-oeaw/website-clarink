@@ -59,6 +59,8 @@
 	--color-brand-800: #115441;
 	--color-brand-900: #0f4537;
 	--color-brand-950: #07271f;
+
+	--color-clarink-blue: #0047bb;
 }
 
 @layer base {

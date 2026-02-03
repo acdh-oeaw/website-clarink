@@ -3,17 +3,63 @@
     {
       "discriminant": "link",
       "value": {
-        "label": "About the project",
+        "label": "Home",
         "link": {
-          "discriminant": "pages",
-          "value": {
-            "id": "about-the-project"
-          }
+          "discriminant": "external",
+          "value": "/"
         }
       }
     },
     {
       "discriminant": "separator"
+    },
+    {
+      "discriminant": "menu",
+      "value": {
+        "label": "More About GermanAT",
+        "items": [
+          {
+            "discriminant": "separator"
+          }
+        ]
+      }
+    },
+    {
+      "discriminant": "menu",
+      "value": {
+        "label": "Services",
+        "items": [
+          {
+            "discriminant": "separator"
+          }
+        ]
+      }
+    },
+    {
+      "discriminant": "menu",
+      "value": {
+        "label": "Ressources",
+        "items": [
+          {
+            "discriminant": "separator"
+          }
+        ]
+      }
+    },
+    {
+      "discriminant": "separator"
+    },
+    {
+      "discriminant": "link",
+      "value": {
+        "label": "Contact",
+        "link": {
+          "discriminant": "pages",
+          "value": {
+            "id": "contact"
+          }
+        }
+      }
     },
     {
       "discriminant": "menu",

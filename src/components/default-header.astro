@@ -4,6 +4,8 @@ import { Icon } from "astro-icon/components";
 import Link from "@/components/link.astro";
 import LocaleSwitcher from "@/components/locale-switcher.astro";
 import Logo from "@/components/logo.astro";
+import LogoOeawDe from "@/components/logo-oeaw-de.astro";
+import LogoOeawEn from "@/components/logo-oeaw-en.astro";
 import MobileNavMenu from "@/components/mobile-nav-menu.svelte";
 import MobileNavMenuToggle from "@/components/mobile-nav-menu-toggle.svelte";
 import NavigationMenu from "@/components/navigation-menu.svelte";
@@ -31,8 +33,10 @@ const navigation = await client.singletons.navigation.get();
 ---
 
 <header class="border-b border-stroke-weak">
-	<div class="container flex flex-wrap items-center justify-between gap-x-6 p-4 sm:px-8">
+	<div class="flex flex-wrap items-center justify-between gap-x-6 p-4 sm:px-8">
 		<nav aria-label={t("navigation.label")} class="flex flex-1 items-center gap-x-6">
+			{locale === "de-AT" && <LogoOeawDe />}
+			{locale === "en-GB" && <LogoOeawEn />}
 			<Link class="-ml-2 inline-block shrink-0 rounded-xs p-2 focus-outline" href={links.home.href}>
 				<Logo class="block h-8 w-auto shrink-0" />
 				<span class="sr-only">{links.home.label}</span>
@@ -120,11 +124,9 @@ const navigation = await client.singletons.navigation.get();
 		</nav>
 
 		<div class="-mr-2 ml-auto hidden items-center gap-x-4 lg:flex">
-			<Search />
 			<LocaleSwitcher />
 		</div>
 	</div>
-
 	<MobileNavMenu className="flex flex-col gap-y-4 px-4 pb-6 lg:hidden" client:idle="svelte">
 		<ul class="flex flex-col" role="list">
 			{

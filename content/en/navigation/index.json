@@ -11,9 +11,6 @@
       }
     },
     {
-      "discriminant": "separator"
-    },
-    {
       "discriminant": "menu",
       "value": {
         "label": "More About GermanAT",
@@ -44,21 +41,6 @@
             "discriminant": "separator"
           }
         ]
-      }
-    },
-    {
-      "discriminant": "separator"
-    },
-    {
-      "discriminant": "link",
-      "value": {
-        "label": "Contact",
-        "link": {
-          "discriminant": "pages",
-          "value": {
-            "id": "contact"
-          }
-        }
       }
     },
     {

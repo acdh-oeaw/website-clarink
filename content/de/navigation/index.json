@@ -1,50 +1,78 @@
 {
-  "links": [
-    {
-      "discriminant": "link",
-      "value": {
-        "label": "Über das Projekt",
-        "link": {
-          "discriminant": "pages",
-          "value": {
-            "id": "about-the-project"
-          }
-        }
-      }
-    },
-    {
-      "discriminant": "separator"
-    },
-    {
-      "discriminant": "menu",
-      "value": {
-        "label": "Info",
-        "items": [
-          {
-            "discriminant": "link",
-            "value": {
-              "label": "Impressum",
-              "link": {
-                "discriminant": "external",
-                "value": "/imprint"
-              }
-            }
-          },
-          {
-            "discriminant": "separator"
-          },
-          {
-            "discriminant": "link",
-            "value": {
-              "label": "Kontakt",
-              "link": {
-                "discriminant": "external",
-                "value": "/contact"
-              }
-            }
-          }
-        ]
-      }
-    }
-  ]
+	"links": [
+		{
+			"discriminant": "link",
+			"value": {
+				"label": "Home",
+				"link": {
+					"discriminant": "external",
+					"value": "/"
+				}
+			}
+		},
+		{
+			"discriminant": "menu",
+			"value": {
+				"label": "More About GermanAT",
+				"items": [
+					{
+						"discriminant": "separator"
+					}
+				]
+			}
+		},
+		{
+			"discriminant": "menu",
+			"value": {
+				"label": "Services",
+				"items": [
+					{
+						"discriminant": "separator"
+					}
+				]
+			}
+		},
+		{
+			"discriminant": "menu",
+			"value": {
+				"label": "Ressources",
+				"items": [
+					{
+						"discriminant": "separator"
+					}
+				]
+			}
+		},
+		{
+			"discriminant": "menu",
+			"value": {
+				"label": "Info",
+				"items": [
+					{
+						"discriminant": "link",
+						"value": {
+							"label": "Imprint",
+							"link": {
+								"discriminant": "external",
+								"value": "/imprint"
+							}
+						}
+					},
+					{
+						"discriminant": "separator"
+					},
+					{
+						"discriminant": "link",
+						"value": {
+							"label": "Contact",
+							"link": {
+								"discriminant": "external",
+								"value": "/contact"
+							}
+						}
+					}
+				]
+			}
+		}
+	]
 }

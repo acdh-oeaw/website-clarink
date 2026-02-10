@@ -37,8 +37,11 @@ const navigation = await client.singletons.navigation.get();
 		<nav aria-label={t("navigation.label")} class="flex flex-1 items-center gap-x-5">
 			{locale === "de-AT" && <LogoOeawDe />}
 			{locale === "en-GB" && <LogoOeawEn />}
+			<Logo class="block h-8 w-auto shrink-0" />
 			<Link class="-ml-2 inline-block shrink-0 rounded-xs p-2 focus-outline" href={links.home.href}>
-				<Logo class="block h-8 w-auto shrink-0" />
+				<img
+					alt="ClarinK logo"      class="block h-8 w-auto shrink-0"      decoding="async"      loading="lazy"      src="/clarink.png"
+				/>
 				<span class="sr-only">{links.home.label}</span>
 			</Link>
 

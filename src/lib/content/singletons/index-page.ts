@@ -40,9 +40,9 @@ function createIndexPageCollection<TLocale extends IntlLocale>(locale: TLocale) 
 			const input = new VFile({ path: item.absoluteFilePath, value: content });
 			const output = await compile(input, compileOptions);
 			const module = context.createJavaScriptImport<MDXContent>(String(output));
-			const image = _image ? context.createImportDeclaration<ImageMetadata>(
-				path.join(publicPath, _image),
-			) : null;
+			const image = _image
+				? context.createImportDeclaration<ImageMetadata>(path.join(publicPath, _image))
+				: null;
 
 			return {
 				id: item.id,

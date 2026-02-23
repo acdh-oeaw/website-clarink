@@ -16,7 +16,40 @@
         "label": "More About GermanAT",
         "items": [
           {
-            "discriminant": "separator"
+            "discriminant": "link",
+            "value": {
+              "label": "Why German in Austria?",
+              "link": {
+                "discriminant": "pages",
+                "value": {
+                  "id": "why-german-in-austria"
+                }
+              }
+            }
+          },
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "The GermanAT Team",
+              "link": {
+                "discriminant": "pages",
+                "value": {
+                  "id": "the-german-at-team"
+                }
+              }
+            }
+          },
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "Our Partners",
+              "link": {
+                "discriminant": "pages",
+                "value": {
+                  "id": "our-partners"
+                }
+              }
+            }
           }
         ]
       }

@@ -70,7 +70,38 @@
         "label": "Services",
         "items": [
           {
-            "discriminant": "separator"
+            "discriminant": "link",
+            "value": {
+              "label": "Our Services",
+              "link": {
+                "discriminant": "pages",
+                "value": {
+                  "id": "our-services"
+                }
+              }
+            }
+          },
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "Helpdesk",
+              "link": {
+                "discriminant": "pages",
+                "value": {
+                  "id": "helpdesk"
+                }
+              }
+            }
+          },
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "Tools",
+              "link": {
+                "discriminant": "external",
+                "value": "/tools"
+              }
+            }
           }
         ]
       }
@@ -81,7 +112,52 @@
         "label": "Ressources",
         "items": [
           {
-            "discriminant": "separator"
+            "discriminant": "link",
+            "value": {
+              "label": "Corpora",
+              "link": {
+                "discriminant": "pages",
+                "value": {
+                  "id": "corpora"
+                }
+              }
+            }
+          },
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "Datasets",
+              "link": {
+                "discriminant": "pages",
+                "value": {
+                  "id": "datasets"
+                }
+              }
+            }
+          },
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "Dictionaries",
+              "link": {
+                "discriminant": "pages",
+                "value": {
+                  "id": "dictionairies"
+                }
+              }
+            }
+          },
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "Plattforms",
+              "link": {
+                "discriminant": "pages",
+                "value": {
+                  "id": "plattforms"
+                }
+              }
+            }
           }
         ]
       }

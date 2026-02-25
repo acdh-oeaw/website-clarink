@@ -5,6 +5,24 @@ export const figureAlignments = [
 
 export type FigureAlignment = (typeof figureAlignments)[number]["value"];
 
+export const gridAlignments = [
+	{ label: "Center", value: "center" },
+	{ label: "Stretch", value: "stretch" },
+] as const;
+
+export type GridAlignment = (typeof gridAlignments)[number]["value"];
+
+export const gridLayouts = [
+	{ label: "Two columns", value: "two-columns" },
+	{ label: "Three columns", value: "three-columns" },
+	{ label: "Four columns", value: "four-columns" },
+	{ label: "Two columns, right is 2x as wide", value: "one-two-columns" },
+	{ label: "Two columns, right is 3x as wide", value: "one-three-columns" },
+	{ label: "Two columns, right is 4x as wide", value: "one-four-columns" },
+] as const;
+
+export type GridLayout = (typeof gridLayouts)[number]["value"];
+
 export const linkKinds = [
 	{ label: "Pages", value: "pages" },
 	{ label: "Direct URL", value: "external" },

@@ -8,6 +8,7 @@ import { VFile } from "vfile";
 
 import { reader } from "@/lib/content/keystatic/reader";
 import { compile, type CompileOptions } from "@/lib/content/mdx/compile";
+import { createImageImportsPlugin } from "@/lib/content/mdx/rehype-plugins";
 import {
 	createGitHubMarkdownPlugin,
 	createTypographicQuotesPlugin,
@@ -24,7 +25,7 @@ function createIndexPageCollection<TLocale extends IntlLocale>(locale: TLocale) 
 	const compileOptions: CompileOptions = {
 		remarkPlugins: [createGitHubMarkdownPlugin(), createTypographicQuotesPlugin(language)],
 		remarkRehypeOptions: createRemarkRehypeOptions(locale),
-		rehypePlugins: [],
+		rehypePlugins: [createImageImportsPlugin(["Figure", "ImageLink"], publicPath)],
 	};
 
 	return createCollection({
@@ -40,9 +41,9 @@ function createIndexPageCollection<TLocale extends IntlLocale>(locale: TLocale) 
 			const input = new VFile({ path: item.absoluteFilePath, value: content });
 			const output = await compile(input, compileOptions);
 			const module = context.createJavaScriptImport<MDXContent>(String(output));
-			const image = _image ? context.createImportDeclaration<ImageMetadata>(
-				path.join(publicPath, _image),
-			) : null;
+			const image = _image
+				? context.createImportDeclaration<ImageMetadata>(path.join(publicPath, _image))
+				: null;
 
 			return {
 				id: item.id,

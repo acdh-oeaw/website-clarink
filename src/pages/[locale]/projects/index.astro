@@ -1,0 +1,104 @@
+---
+import type { GetStaticPathsResult } from "astro";
+import { Image } from "astro:assets";
+
+import DefaultLayout from "@/components/default-layout.astro";
+import DocumentBody from "@/components/document-body.astro";
+import DocumentHead from "@/components/document-head.astro";
+import DocumentMetadata from "@/components/document-metadata.astro";
+import HtmlDocument from "@/components/html-document.astro";
+import Link from "@/components/link.astro";
+import { createClient } from "@/lib/content/create-client";
+import { getIntlLanguage, type IntlLocale,locales } from "@/lib/i18n/locales";
+import { localeToPrefix } from "@/lib/i18n/routing";
+
+export function getStaticPaths() {
+	const paths = locales.map((locale) => {
+		return { params: { locale: localeToPrefix[locale] } };
+	});
+
+	return paths satisfies GetStaticPathsResult;
+}
+
+const labels: Record<
+	IntlLocale,
+	{ empty: string; metaTitle: string; readMore: string; title: string }
+> = {
+	"de-AT": {
+		title: "Projekte",
+		metaTitle: "Projekte",
+		readMore: "Mehr erfahren",
+		empty: "Noch keine Projekte vorhanden.",
+	},
+	"en-GB": {
+		title: "Projects",
+		metaTitle: "Projects",
+		readMore: "Read more",
+		empty: "No projects yet.",
+	},
+};
+
+const { locale } = Astro.locals;
+const client = await createClient(getIntlLanguage(locale));
+const items = await client.collections.projects.all();
+const text = labels[locale];
+---
+
+<HtmlDocument>
+	<DocumentHead>
+		<DocumentMetadata title={text.metaTitle} />
+	</DocumentHead>
+
+	<DocumentBody>
+		<DefaultLayout>
+			<section class="mx-auto w-full max-w-(--breakpoint-lg) p-8 xs:px-0">
+				<div class="richtext max-w-none">
+					<h1>{text.title}</h1>
+				</div>
+
+				{
+					items.length > 0 ? (
+						<ul class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2" role="list">
+							{items.map((item) => {
+								return (
+									<li>
+										<article class="h-full">
+											<Link
+												class="group grid h-full grid-rows-[auto_1fr] overflow-hidden rounded-md border border-stroke-weak no-underline shadow-sm focus-outline transition hover:border-stroke-strong hover:shadow-md"
+												href={`/projects/${item.id}`}
+											>
+												{item.metadata.image != null ? (
+													<div class="overflow-hidden border-b border-stroke-weak">
+														<Image
+															alt=""
+															class="aspect-video w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+															loading="lazy"
+															src={item.metadata.image}
+														/>
+													</div>
+												) : (
+													<div class="aspect-video border-b border-stroke-weak" />
+												)}
+												<div class="grid content-start gap-3 p-5">
+													<h2 class="font-heading text-xl font-bold text-text-strong">
+														{item.metadata.title}
+													</h2>
+													<p class="text-sm leading-6">{item.metadata.lead}</p>
+													<span class="mt-2 text-sm font-semibold text-text-strong underline underline-offset-4">
+														{text.readMore}
+													</span>
+												</div>
+											</Link>
+										</article>
+									</li>
+								);
+							})}
+						</ul>
+					) : (
+						<p class="mt-6">{text.empty}</p>
+					)
+				}
+			</section>
+		</DefaultLayout>
+	</DocumentBody>
+</HtmlDocument>

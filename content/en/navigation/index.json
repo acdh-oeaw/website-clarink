@@ -50,6 +50,16 @@
                 }
               }
             }
+          },
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "Projects from GermanAT",
+              "link": {
+                "discriminant": "external",
+                "value": "/projects"
+              }
+            }
           }
         ]
       }

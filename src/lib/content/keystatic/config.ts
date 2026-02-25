@@ -3,6 +3,8 @@ import { config as createConfig } from "@keystatic/core";
 
 import { env } from "@/config/env.config";
 import { createPages } from "@/lib/content/keystatic/collections/pages";
+import { createProjects } from "@/lib/content/keystatic/collections/projects";
+import { createTools } from "@/lib/content/keystatic/collections/tools";
 import { Logo } from "@/lib/content/keystatic/logo";
 import { createIndexPage } from "@/lib/content/keystatic/singletons/index-page";
 import { createMetadata } from "@/lib/content/keystatic/singletons/metadata";
@@ -12,6 +14,10 @@ export const config = createConfig({
 	collections: {
 		[withI18nPrefix("pages", "de")]: createPages("de"),
 		[withI18nPrefix("pages", "en")]: createPages("en"),
+		[withI18nPrefix("projects", "de")]: createProjects("de"),
+		[withI18nPrefix("projects", "en")]: createProjects("en"),
+		[withI18nPrefix("tools", "de")]: createTools("de"),
+		[withI18nPrefix("tools", "en")]: createTools("en"),
 	},
 	singletons: {
 		[withI18nPrefix("index-page", "de")]: createIndexPage("de"),
@@ -50,6 +56,10 @@ export const config = createConfig({
 
 				withI18nPrefix("pages", "de"),
 				withI18nPrefix("pages", "en"),
+				withI18nPrefix("projects", "de"),
+				withI18nPrefix("projects", "en"),
+				withI18nPrefix("tools", "de"),
+				withI18nPrefix("tools", "en"),
 			],
 			Settings: [
 				withI18nPrefix("navigation", "de"),

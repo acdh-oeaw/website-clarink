@@ -1,44 +1,16 @@
 {
-  "title": "ACDH Website",
-  "description": "A project website.",
+  "title": "CLARIN K-Centre",
+  "description": "CLARIN K-Centre",
   "creator": "Austrian Centre for Digital Humanities",
   "manifest": {
-    "name": "ACDH Website",
-    "short-name": "ACDH Website",
-    "description": "A project website."
+    "name": "CLARIN K-Centre",
+    "short-name": "CLARIN K-Centre",
+    "description": "CLARIN K-Centre GermanAT on German in Austria!"
   },
   "social": [
     {
-      "kind": "bluesky",
-      "href": "https://bsky.app/profile/acdh-oeaw.bsky.social"
-    },
-    {
-      "kind": "instagram",
-      "href": "https://www.instagram.com/acdh_oeaw/"
-    },
-    {
-      "kind": "linkedin",
-      "href": "https://www.linkedin.com/company/acdh"
-    },
-    {
-      "kind": "mastodon",
-      "href": "https://fedihum.org/@acdhch_oeaw"
-    },
-    {
-      "kind": "rss",
-      "href": "/rss.xml"
-    },
-    {
-      "kind": "twitter",
-      "href": "https://x.com/acdh_oeaw"
-    },
-    {
       "kind": "website",
-      "href": "https://www.oeaw.ac.at/acdh"
-    },
-    {
-      "kind": "youtube",
-      "href": "https://www.youtube.com/@acdh-ch5185"
+      "href": "https://k-centre-germanat.acdh.oeaw.ac.at"
     }
   ]
 }

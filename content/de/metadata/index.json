@@ -1,11 +1,11 @@
 {
   "title": "ACDH Website",
-  "description": "Eine Projekt-Website.",
+  "description": "A project website.",
   "creator": "Austrian Centre for Digital Humanities",
   "manifest": {
     "name": "ACDH Website",
     "short-name": "ACDH Website",
-    "description": "Eine Projekt-Website."
+    "description": "A project website."
   },
   "social": [
     {
@@ -24,7 +24,7 @@
       "kind": "mastodon",
       "href": "https://fedihum.org/@acdhch_oeaw"
     },
-		{
+    {
       "kind": "rss",
       "href": "/rss.xml"
     },
@@ -34,7 +34,7 @@
     },
     {
       "kind": "website",
-      "href": "https://www.oeaw.ac.at/de/acdh"
+      "href": "https://www.oeaw.ac.at/acdh"
     },
     {
       "kind": "youtube",

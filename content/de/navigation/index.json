@@ -1,111 +1,197 @@
 {
-	"links": [
-		{
-			"discriminant": "link",
-			"value": {
-				"label": "Home",
-				"link": {
-					"discriminant": "external",
-					"value": "/"
-				}
-			}
-		},
-		{
-			"discriminant": "menu",
-			"value": {
-				"label": "More About GermanAT",
-				"items": [
-					{
-						"discriminant": "link",
-						"value": {
-							"label": "Warum Deutsch in Österreich?",
-							"link": {
-								"discriminant": "pages",
-								"value": {
-									"id": "why-german-in-austria"
-								}
-							}
-						}
-					},
-					{
-						"discriminant": "link",
-						"value": {
-							"label": "Das GermanAT-Team",
-							"link": {
-								"discriminant": "pages",
-								"value": {
-									"id": "the-german-at-team"
-								}
-							}
-						}
-					},
-					{
-						"discriminant": "link",
-						"value": {
-							"label": "Unsere Partner",
-							"link": {
-								"discriminant": "pages",
-								"value": {
-									"id": "our-partners"
-								}
-							}
-						}
-					}
-				]
-			}
-		},
-		{
-			"discriminant": "menu",
-			"value": {
-				"label": "Services",
-				"items": [
-					{
-						"discriminant": "separator"
-					}
-				]
-			}
-		},
-		{
-			"discriminant": "menu",
-			"value": {
-				"label": "Ressources",
-				"items": [
-					{
-						"discriminant": "separator"
-					}
-				]
-			}
-		},
-		{
-			"discriminant": "menu",
-			"value": {
-				"label": "Info",
-				"items": [
-					{
-						"discriminant": "link",
-						"value": {
-							"label": "Imprint",
-							"link": {
-								"discriminant": "external",
-								"value": "/imprint"
-							}
-						}
-					},
-					{
-						"discriminant": "separator"
-					},
-					{
-						"discriminant": "link",
-						"value": {
-							"label": "Contact",
-							"link": {
-								"discriminant": "external",
-								"value": "/contact"
-							}
-						}
-					}
-				]
-			}
-		}
-	]
+  "links": [
+    {
+      "discriminant": "link",
+      "value": {
+        "label": "Home",
+        "link": {
+          "discriminant": "external",
+          "value": "/"
+        }
+      }
+    },
+    {
+      "discriminant": "menu",
+      "value": {
+        "label": "More About GermanAT",
+        "items": [
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "Why German in Austria?",
+              "link": {
+                "discriminant": "pages",
+                "value": {
+                  "id": "why-german-in-austria"
+                }
+              }
+            }
+          },
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "The GermanAT Team",
+              "link": {
+                "discriminant": "pages",
+                "value": {
+                  "id": "the-german-at-team"
+                }
+              }
+            }
+          },
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "Our Partners",
+              "link": {
+                "discriminant": "pages",
+                "value": {
+                  "id": "our-partners"
+                }
+              }
+            }
+          },
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "Projects from GermanAT",
+              "link": {
+                "discriminant": "external",
+                "value": "/projects"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "discriminant": "menu",
+      "value": {
+        "label": "Services",
+        "items": [
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "Our Services",
+              "link": {
+                "discriminant": "pages",
+                "value": {
+                  "id": "our-services"
+                }
+              }
+            }
+          },
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "Helpdesk",
+              "link": {
+                "discriminant": "pages",
+                "value": {
+                  "id": "helpdesk"
+                }
+              }
+            }
+          },
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "Tools",
+              "link": {
+                "discriminant": "external",
+                "value": "/tools"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "discriminant": "menu",
+      "value": {
+        "label": "Ressources",
+        "items": [
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "Corpora",
+              "link": {
+                "discriminant": "pages",
+                "value": {
+                  "id": "corpora"
+                }
+              }
+            }
+          },
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "Datasets",
+              "link": {
+                "discriminant": "pages",
+                "value": {
+                  "id": "datasets"
+                }
+              }
+            }
+          },
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "Dictionaries",
+              "link": {
+                "discriminant": "pages",
+                "value": {
+                  "id": "dictionairies"
+                }
+              }
+            }
+          },
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "Plattforms",
+              "link": {
+                "discriminant": "pages",
+                "value": {
+                  "id": "plattforms"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "discriminant": "menu",
+      "value": {
+        "label": "Info",
+        "items": [
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "Imprint",
+              "link": {
+                "discriminant": "external",
+                "value": "/imprint"
+              }
+            }
+          },
+          {
+            "discriminant": "separator"
+          },
+          {
+            "discriminant": "link",
+            "value": {
+              "label": "Contact",
+              "link": {
+                "discriminant": "external",
+                "value": "/contact"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
 }

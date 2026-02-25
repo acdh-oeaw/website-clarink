@@ -8,6 +8,7 @@ import { VFile } from "vfile";
 
 import { reader } from "@/lib/content/keystatic/reader";
 import { compile, type CompileOptions } from "@/lib/content/mdx/compile";
+import { createImageImportsPlugin } from "@/lib/content/mdx/rehype-plugins";
 import {
 	createGitHubMarkdownPlugin,
 	createTypographicQuotesPlugin,
@@ -24,7 +25,7 @@ function createIndexPageCollection<TLocale extends IntlLocale>(locale: TLocale) 
 	const compileOptions: CompileOptions = {
 		remarkPlugins: [createGitHubMarkdownPlugin(), createTypographicQuotesPlugin(language)],
 		remarkRehypeOptions: createRemarkRehypeOptions(locale),
-		rehypePlugins: [],
+		rehypePlugins: [createImageImportsPlugin(["Figure", "ImageLink"], publicPath)],
 	};
 
 	return createCollection({

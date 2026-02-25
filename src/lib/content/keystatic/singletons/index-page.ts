@@ -6,6 +6,8 @@ import {
 } from "@acdh-oeaw/keystatic-lib";
 import { fields, singleton } from "@keystatic/core";
 
+import { createGrid } from "@/lib/content/keystatic/components/grid";
+import { createImageLink } from "@/lib/content/keystatic/components/image-link";
 import { createLink } from "@/lib/content/keystatic/components/link";
 import { createLinkSchema } from "@/lib/content/keystatic/utils/create-link-schema";
 
@@ -65,6 +67,8 @@ export const createIndexPage = createSingleton("/index-page/", (paths, locale) =
 					table: false,
 				},
 				components: {
+					...createGrid(paths, locale),
+					...createImageLink(paths, locale),
 					...createLink(paths, locale),
 				},
 			}),

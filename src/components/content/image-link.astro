@@ -1,0 +1,21 @@
+---
+import type { ImageMetadata } from "astro";
+
+import Figure from "@/components/content/figure.astro";
+import ContentLink from "@/components/content/link.astro";
+import type { LinkSchema } from "@/lib/content/utils/get-link-props";
+
+interface Props {
+	alt?: string;
+	link: LinkSchema;
+	src: ImageMetadata;
+	text: string;
+}
+
+const { alt, link, src, text } = Astro.props;
+---
+
+<ContentLink item={link}>
+	<span class="sr-only">{text}</span>
+	<Figure alt={alt} src={src} />
+</ContentLink>

@@ -9,6 +9,8 @@ import { collection, fields } from "@keystatic/core";
 import { createEmbed } from "@/lib/content/keystatic/components/embed";
 import { createFigure } from "@/lib/content/keystatic/components/figure";
 import { createFootnote } from "@/lib/content/keystatic/components/footnote";
+import { createGrid } from "@/lib/content/keystatic/components/grid";
+import { createImageLink } from "@/lib/content/keystatic/components/image-link";
 import { createLink } from "@/lib/content/keystatic/components/link";
 
 // import { createPreviewUrl } from "@/lib/content/keystatic/utils/create-preview-url";
@@ -48,6 +50,8 @@ export const createPages = createCollection("/pages/", (paths, locale) => {
 					...createEmbed(paths, locale),
 					...createFigure(paths, locale),
 					...createFootnote(paths, locale),
+					...createGrid(paths, locale),
+					...createImageLink(paths, locale),
 					...createLink(paths, locale),
 				},
 			}),

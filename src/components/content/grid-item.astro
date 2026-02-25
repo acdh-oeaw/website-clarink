@@ -1,0 +1,14 @@
+---
+import type { GridAlignment } from "@/lib/content/options";
+
+interface Props {
+	/** @default "stretch" */
+	alignment?: GridAlignment;
+}
+
+const { alignment = "stretch" } = Astro.props;
+---
+
+<div class={alignment === "center" ? "self-center" : undefined}>
+	<slot />
+</div>

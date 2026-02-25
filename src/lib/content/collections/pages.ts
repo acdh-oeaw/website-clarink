@@ -43,7 +43,7 @@ function createPagesCollection<TLocale extends IntlLocale>(locale: TLocale) {
 			createTableOfContentsPlugin(),
 			createIframeTitlesPlugin(["Embed"]),
 			createSyntaxHighlighterPlugin(),
-			createImageImportsPlugin(["Figure"], publicPath),
+			createImageImportsPlugin(["Figure", "ImageLink"], publicPath),
 		],
 	};
 

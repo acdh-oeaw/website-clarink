@@ -109,7 +109,7 @@
     {
       "discriminant": "menu",
       "value": {
-        "label": "Ressources",
+        "label": "Resources",
         "items": [
           {
             "discriminant": "link",

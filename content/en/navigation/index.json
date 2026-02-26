@@ -150,11 +150,11 @@
           {
             "discriminant": "link",
             "value": {
-              "label": "Plattforms",
+              "label": "Platforms",
               "link": {
                 "discriminant": "pages",
                 "value": {
-                  "id": "plattforms"
+                  "id": "platforms"
                 }
               }
             }

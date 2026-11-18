@@ -7,7 +7,7 @@ import * as v from "valibot";
 const environment =
 	// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 	import.meta.env === undefined
-		? process.env
+		? { ...process.env }
 		: import.meta.env.SSR
 			? Object.assign({}, process.env, import.meta.env)
 			: import.meta.env;

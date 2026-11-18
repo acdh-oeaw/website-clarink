@@ -5,12 +5,12 @@ template repository for project websites, built with [`astro`](https://astro.bui
 
 ## prerequisites
 
-- [node.js v24](https://nodejs.org/en/download)
+- [node.js v26](https://nodejs.org/en/download)
 - [pnpm v10](https://pnpm.io/installation)
 
 > [!TIP]
 >
-> you can use `pnpm` to install the required node.js version with `pnpm env use 24 --global`
+> you can use `pnpm` to install the required node.js version with `pnpm env use 26 --global`
 
 ## environment variables
 

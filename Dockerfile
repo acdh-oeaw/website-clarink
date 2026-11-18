@@ -6,9 +6,9 @@
 # @see https://sharp.pixelplumbing.com/install#linux-memory-allocator
 
 # base
-FROM node:24-alpine AS base
+FROM node:26-alpine AS base
 
-RUN corepack enable
+RUN npm install --global corepack && corepack enable
 
 RUN mkdir /app && chown -R node:node /app
 WORKDIR /app
@@ -65,7 +65,7 @@ RUN --mount=type=secret,id=KEYSTATIC_GITHUB_CLIENT_ID,uid=1000 \
 		pnpm run build
 
 # serve
-FROM node:24-alpine AS serve
+FROM node:26-alpine AS serve
 
 RUN mkdir /app && chown -R node:node /app
 WORKDIR /app

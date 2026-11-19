@@ -1,7 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
 
-import ColorSchemeSwitcher from "@/components/color-scheme-switcher.astro";
 import Link from "@/components/link.astro";
 import Logo from "@/components/logo.astro";
 import type { SocialMediaKind } from "@/lib/content/options";
@@ -121,8 +120,6 @@ for (const [id, href] of Object.entries(meta.social)) {
 					}
 				</ul>
 			</nav>
-
-			<ColorSchemeSwitcher />
 
 			<small class="text-xs text-text-weak">
 				&copy; {new Date().getUTCFullYear()}{" "}

@@ -4,7 +4,6 @@ import { ClientRouter } from "astro:transitions";
 
 import { env } from "@/config/env.config";
 import AnalyticsScript from "@/lib/analytics/analytics-script.astro";
-import ColorSchemeScript from "@/lib/color-scheme/color-scheme-script.astro";
 import { createHref } from "@/lib/navigation/create-href";
 import { withBasePath } from "@/lib/navigation/with-base-path";
 
@@ -16,7 +15,7 @@ const googleSiteVerification = env.PUBLIC_APP_GOOGLE_SITE_VERIFICATION;
 <head>
 	<meta charset="utf-8" />
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
-	<meta content="light dark" name="color-scheme" />
+	<meta content="light" name="color-scheme" />
 
 	<link
 		href={createHref({ pathname: withBasePath("/favicon.ico") })}
@@ -49,8 +48,6 @@ const googleSiteVerification = env.PUBLIC_APP_GOOGLE_SITE_VERIFICATION;
 			<meta content={googleSiteVerification} name="google-site-verification" />
 		) : null
 	}
-
-	<ColorSchemeScript />
 
 	{matomoBaseUrl && matomoId ? <AnalyticsScript baseUrl={matomoBaseUrl} id={matomoId} /> : null}
 

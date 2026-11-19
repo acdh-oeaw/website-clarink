@@ -2,33 +2,21 @@ import { defaultLocale } from "@/lib/i18n/locales";
 import { expect, test } from "~/e2e/lib/test";
 
 test.describe("color scheme", () => {
-	test.describe("should set color mode according to system preference", () => {
-		test.use({ colorScheme: "no-preference" });
+	test.use({ colorScheme: "dark" });
 
-		test("with no preference", async ({ createIndexPage }) => {
-			const { indexPage } = await createIndexPage(defaultLocale);
-			await indexPage.goto();
-			await expect(indexPage.page.locator("html")).toHaveAttribute("data-ui-color-scheme", "light");
+	test("uses light mode even when dark mode was previously selected", async ({
+		createIndexPage,
+		page,
+	}) => {
+		await page.addInitScript(() => {
+			localStorage.setItem("uiColorScheme", "dark");
 		});
-	});
 
-	test.describe("should set color mode according to system preference", () => {
-		test.use({ colorScheme: "light" });
+		const { indexPage } = await createIndexPage(defaultLocale);
+		await indexPage.goto();
 
-		test("in light mode", async ({ createIndexPage }) => {
-			const { indexPage } = await createIndexPage(defaultLocale);
-			await indexPage.goto();
-			await expect(indexPage.page.locator("html")).toHaveAttribute("data-ui-color-scheme", "light");
-		});
-	});
-
-	test.describe("should set color mode according to system preference", () => {
-		test.use({ colorScheme: "dark" });
-
-		test("in dark mode", async ({ createIndexPage }) => {
-			const { indexPage } = await createIndexPage(defaultLocale);
-			await indexPage.goto();
-			await expect(indexPage.page.locator("html")).toHaveAttribute("data-ui-color-scheme", "dark");
-		});
+		await expect(page.locator("html")).toHaveAttribute("data-ui-color-scheme", "light");
+		await expect(page.locator("html")).toHaveCSS("color-scheme", "light");
+		await expect(page.locator('input[name="color-scheme"]')).toHaveCount(0);
 	});
 });
